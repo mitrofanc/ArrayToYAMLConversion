@@ -1,6 +1,7 @@
 #include "utils.h"
 
-bool tryInput (int& dst){
+template <typename T>
+bool tryInput (T& dst){
     std::cin >> dst;
     if (std::cin.eof())
         throw std::runtime_error("EOF");
@@ -14,15 +15,16 @@ bool tryInput (int& dst){
     return true;
 }
 
-int input(){
-    int res;
-    while(!tryInput(res));
+template <typename T>
+T input(){
+    T res;
+    while(!tryInput<T>(res));
     return res;
 }
 
 int* input_array(size_t size){
     int* arr = new int[size] {};
-    for (size_t i{}; i < size; i++) std::cin >> arr[i];
+    for (size_t i{}; i < size; i++) arr[i] = input<int>();
     return arr;
 }
 

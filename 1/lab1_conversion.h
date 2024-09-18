@@ -14,7 +14,7 @@ namespace YamlConverting{
     YamlFormat arr_to_yaml(const char* name, size_t name_size, int* array, size_t arr_size);
     YamlFormat arr_to_yaml(const char* name, int* array, size_t arr_size);
     YamlFormat arr_to_yaml(const std::string& name, int* array, size_t arr_size);
-    int* yaml_to_arr(YamlConverting::YamlFormat* temp, std::string& name, size_t& size);
-    void output_yaml(YamlConverting::YamlFormat& temp);
+    void output_yaml(const YamlConverting::YamlFormat& temp);
+    void clean_Yaml(const YamlFormat& temp);
 }
 #endif //LAB1_LAB1_CONVERSION_H

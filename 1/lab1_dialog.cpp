@@ -22,7 +22,7 @@ void menu(){
             std::cout << "3. Output in Array format" << std::endl;
             std::cout << "4. Delete data" << std::endl;
             std::cout << "5. Exit" << std::endl;
-            choice = input();
+            choice = input<int>();
             auto iterator = menuChoice.find(choice);
             if (iterator !=  menuChoice.end()){
                 try{
@@ -42,18 +42,18 @@ void menu(){
 void input_data(YC::YamlFormat& temp){
     std::string name;
     std::cout << "Input the name: ";
-    std::cin >> name;
+    name = input<std::string>();
     std::cout << std::endl;
     std::cout << "What format will the name stored in?" << std::endl;
     std::cout << "1. std::string" << std::endl;
     std::cout << "2. null-terminated string" << std::endl;
     std::cout << "3. array of symbols" << std::endl;
-    int choice = input();
-    while (choice < 1 || choice > 3) choice = input();
+    int choice = input<int>();
+    while (choice < 1 || choice > 3) choice = input<int>();
     std::cout << "Input the quantity: ";
-    int size = input();
+    int size = input<int>();
     std::cout << std::endl;
-    int* array = input_array(size); //
+    int* array = input_array(size);
     if (choice == 1){
         temp = YC::arr_to_yaml(name, array, size);
     }
@@ -63,6 +63,7 @@ void input_data(YC::YamlFormat& temp){
     if (choice == 3){
         temp = YC::arr_to_yaml(name.c_str(), name.length(), array, size);
     }
+    delete array;
 }
 
 void outputYAML(YC::YamlFormat& temp){
@@ -74,7 +75,5 @@ void outputArr(YC::YamlFormat& temp){
 }
 
 void deleteArr(YC::YamlFormat& temp){
-    //todo clean old array in menu
-    delete temp.array;
-    temp.array = nullptr;
+    YC::clean_Yaml(temp);
 }
