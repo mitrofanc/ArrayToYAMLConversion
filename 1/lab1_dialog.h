@@ -6,6 +6,7 @@
 #include <variant>
 #include "lab1_conversion.h"
 #include "utils.h"
+#include <string>
 
 void menu();
 void input_data(YamlConverting::YamlFormat& temp);

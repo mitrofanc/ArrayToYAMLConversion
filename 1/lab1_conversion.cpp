@@ -10,7 +10,7 @@ namespace YamlConverting{
 
     YamlFormat arr_to_yaml(const char* name, int* array, size_t arr_size){ //null-terminates string
         YamlFormat temp;
-        temp.name = std::string(name);
+        temp.name = name;
         temp.size = arr_size;
         temp.array = new int[arr_size];
         std::copy(array, array + arr_size, temp.array); //todo delete array
@@ -26,6 +26,6 @@ namespace YamlConverting{
     }
 
     void clean_Yaml(const YamlFormat& temp){
-        delete temp.array;
+        delete[] temp.array;
     }
 }
