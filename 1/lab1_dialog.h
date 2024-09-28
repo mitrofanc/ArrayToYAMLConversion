@@ -9,8 +9,11 @@
 #include <string>
 
 void menu();
-void input_data(YamlConverting::YamlFormat& temp);
-void outputYAML(YamlConverting::YamlFormat& temp);
-void outputArr(YamlConverting::YamlFormat& temp);
-void deleteArr(YamlConverting::YamlFormat& temp);
+void input_data_to_arr(YamlConverting::DataFormat& temp);
+void input_data_to_yaml(YamlConverting::DataFormat& temp);
+void convert_arr_to_yaml(YamlConverting::DataFormat& temp);
+void convert_yaml_to_arr(YamlConverting::DataFormat& temp);
+void outputYAML(YamlConverting::DataFormat& temp);
+void outputArr(YamlConverting::DataFormat& temp);
+void deleteArr(YamlConverting::DataFormat& temp);
 #endif //LAB1_LAB1_DIALOG_H
