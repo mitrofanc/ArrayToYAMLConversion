@@ -20,6 +20,6 @@ namespace YamlConverting{
     std::string arr_to_yaml(const std::string& name, int* array, size_t arr_size);
     void yaml_to_arr(DataFormat& temp);
     void output_yaml(std::string& yaml_format);
-    void clean_Yaml(const DataFormat& temp);
+    void clean_Yaml(DataFormat& temp);
 }
 #endif //LAB1_LAB1_CONVERSION_H

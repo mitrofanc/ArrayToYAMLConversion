@@ -36,7 +36,7 @@ void menu(){
 
             }
             else std::cout << "Try again" << std::endl;
-        } while (choice != 5);
+        } while (choice != 7);
     }
     catch (std::runtime_error& e){ std::cerr << e.what() << std::endl; }
     catch (std::bad_alloc& e) { std::cerr << e.what() << std::endl; }
@@ -53,8 +53,8 @@ void input_data_to_arr(YC::DataFormat& temp){
     std::cout << "Input the size: ";
     auto size = input<int>();
     std::cout << std::endl;
-    int* array = input_array(temp.size);
-    YC::init_data(name, array, size);
+    int* array = input_array(size);
+    temp = YC::init_data(name, array, size);
     delete array;
 }
 
