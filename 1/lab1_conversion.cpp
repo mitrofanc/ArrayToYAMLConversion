@@ -38,11 +38,10 @@ namespace YamlConverting{
                 array.push_back(number);
             }
         }
+        temp.array = new int[array.size()];
         temp.size = array.size();
-        temp.array = new int[temp.size];
-        for (size_t i = 0; i < temp.size; i++){
-            temp.array[i] = array[i];
-        }
+        std::copy(array.begin(), array.end(), temp.array);
+        temp.yaml_string.clear();
     }
 
     void output_yaml(std::string& yaml_format){
