@@ -1,32 +1,52 @@
-# Загрузка работ на git.dozen.mephi.ru
-Все работы необходимо загрузить на git.dozen.mephi.ru.
+# lab1
 
-Для допуска к экзамену ВСЕ сданные вами работы должны быть загружены.
+# Taks
+Realize functions for converting a data from array to YAML string format and back.
 
-Выгрузка работ будет проводиться программой, поэтому необходимо строго соблюдать следующий шаблон:
-- внутри репозитория каталоги называются по номеру работы (1, 2, 3);
-- исходный код доп. задания "прикладная программа" по ЛР 2 загружать в каталог 2ex;
-- исходный код доп. задания "плагин" по ЛР 3 загружать в каталог 3ex;
-- внутри каждой из директорий должен лежать код только соответствующей работы;
-- если какой-то из работ нету, то каталог с этой работой не создавайте (или оставьте пустой);
-- внутри каталогов с работами допускается наличие поддиректорий;
-- все файлы исходного кода должны иметь расширение .c .h .cpp .hpp .tcc .cc .c++ или .cxx;
-- вместе с файлами исходного кода допускается наличие прочих файлов (исходные данные, рисунки, файлы автосборки), которые имеют расширение строго НЕ из списка, приведенного выше; эти файлы не будут участвовать в проверке на плагиат;
-- в репозитории должны отсутствовать большие файлы (размер одной ЛР не должен превышать 10MB);
-- в репозитории должны отсутствовать чужие исходные коды (если пользуетесь CMake, ОБЯЗАТЕЛЬНО удаляйте директорию cmake-build-debug, так как в ней есть свои исходники);
-- для продвинутых: допускается использование сабмодулей для аггрегации кода в одном репозитории или из сторонних систем контроля версий.
-
-Внимание!!! Для самостоятельной проверки правильности загрузки работы рекоммендуется использовать следующую команду на сервере samos.dozen.mephi.ru:
-```bash
-check_oop_labs.sh <Путь к каталогу репозитория>
+## Example
+```C++
+Array of 1, 2, 3, 4 with name "Numbers"
+YAML string:
+Numbers:
+    -1
+    -2
+    -3
+    -4
 ```
-Например:
-```bash
-check_oop_labs.sh ~/oop2024
+# Building
+View 1/CMakeLists.txt 
+```C++
+mkdir build
+cd build
+cmake ..
+make
 ```
+# Testing
+View 1/tests/test.cpp
+```C++
+./tests/test.cpp
+```
+# License
+```SQL
+MIT License
 
-Шаблон для репозитория: https://git.dozen.mephi.ru/oop2024/oop2024_template, его можно скопировать или использовать в качестве шаблона чтобы точно не ошибиться.
+Copyright (c) 2024 Andreev Dmitriy
 
-Любые отклонения от шаблона эквивалентны отсутствию работы. Ошибочная загрузка не той работы также эквивалентна её отсутствию.
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
 
-Перечень работ (названия директорий): 1, 2, 2ex, 3, 3ex.
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+```
