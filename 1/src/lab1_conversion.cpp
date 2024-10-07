@@ -1,4 +1,4 @@
-#include "lab1_conversion.h"
+#include "../include/lab1_conversion.h"
 
 namespace YamlConverting{
     DataFormat init_data(std::string& name, int* array, size_t arr_size){
@@ -31,6 +31,12 @@ namespace YamlConverting{
         std::string cur_line;
         std::getline(stream, cur_line);
         temp.name = cur_line.substr(0, cur_line.find(':'));
+        if (!std::getline(stream, cur_line)) {
+            temp.array = nullptr;
+            temp.size = 0;
+            temp.yaml_string.clear();
+            return;
+        }
         std::vector<int> array;
         while (std::getline(stream, cur_line)){
             if (cur_line.find('-') != std::string::npos){
@@ -49,6 +55,7 @@ namespace YamlConverting{
     }
 
     void clean_Yaml(DataFormat& temp){
+        temp.yaml_string.clear();
         delete[] temp.array;
         temp.array = nullptr;
     }

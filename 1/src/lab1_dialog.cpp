@@ -1,4 +1,4 @@
-#include "lab1_dialog.h"
+#include "../include/lab1_dialog.h"
 
 namespace YC = YamlConverting;
 
@@ -32,7 +32,7 @@ void menu(){
                 try{
                     iterator->second(temp);
                 }
-                catch (std::logic_error& e) { std::cerr << e.what() << std::endl; }
+                catch (const std::logic_error& e) { std::cerr << e.what() << std::endl; }
 
             }
             else std::cout << "Try again" << std::endl;

@@ -1,4 +1,4 @@
-#include "utils.h"
+#include "../include/utils.h"
 
 int* input_array(size_t size){
     int* arr = new int[size] {};
